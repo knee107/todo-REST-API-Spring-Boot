@@ -39,7 +39,7 @@ public class ToDoController {
     public ToDo updateToDo(@RequestBody ToDo toDo, @PathVariable int id)
     {
         System.out.println("UPDATED");
-        return toDoServices.updateToDo(toDo);
+        return toDoServices.updateToDo(toDo, id);
     }
 
     //DELETE

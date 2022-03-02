@@ -27,17 +27,13 @@ public class ToDoServices {
     public ToDo getToDoByTitle(String title) {
         return toDoRepository.findByTitle(title);
     }
-    public List<ToDo> getToDoByStatus(Boolean isCompleted) {
-        return toDoRepository.findAllByStatus(isCompleted);
-    }
 
     //PUT
-    public ToDo updateToDo(ToDo toDo) {
-        ToDo existingToDo = toDoRepository.findById(toDo.getId()).orElse(null);
+    public ToDo updateToDo(ToDo toDo, int id) {
+        ToDo existingToDo = toDoRepository.findById(id).orElse(null);
         assert existingToDo != null;
         existingToDo.setDescription(toDo.getDescription());
         existingToDo.setTitle(toDo.getTitle());
-        existingToDo.setIsCompleted(toDo.isCompleted());
         existingToDo.setStatus(toDo.getStatus());
         return toDoRepository.save(existingToDo);
     }
@@ -45,6 +41,6 @@ public class ToDoServices {
     //DELETE
     public String deleteToDo(int id) {
         toDoRepository.deleteById(id);
-        return id + " removed completed";
+        return "Item " + id + " removed completed";
     }
 }

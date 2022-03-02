@@ -2,7 +2,7 @@ package com.todo.todo.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "todo")
+@Table(name = "todo_list")
 public class ToDo {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -11,18 +11,15 @@ public class ToDo {
     private String title;
     @Column(name = "description")
     private String description;
-    @Column(name = "is_completed")
-    private boolean isCompleted;
     @Column(name = "status")
     private String status;
 
     public ToDo() {
     }
 
-    public ToDo(String title, String description, boolean isCompleted, String status) {
+    public ToDo(String title, String description, String status) {
         this.title = title;
         this.description = description;
-        this.isCompleted = isCompleted;
         this.status = status;
     }
 
@@ -50,14 +47,6 @@ public class ToDo {
         this.description = description;
     }
 
-    public boolean isCompleted() {
-        return isCompleted;
-    }
-
-    public void setIsCompleted(boolean isCompleted) {
-        this.isCompleted = isCompleted;
-    }
-
     public String getStatus() {
         return status;
     }
@@ -72,7 +61,6 @@ public class ToDo {
                 "id=" + id +
                 ", title='" + title + '\'' +
                 ", description='" + description + '\'' +
-                ", isCompleted=" + isCompleted + '\'' +
                 ", status=" + status +
                 '}';
     }

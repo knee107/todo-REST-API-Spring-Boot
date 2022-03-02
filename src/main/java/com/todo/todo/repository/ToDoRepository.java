@@ -5,5 +5,4 @@ import com.todo.todo.model.ToDo;
 
 public interface ToDoRepository extends JpaRepository<ToDo, Integer>{
     ToDo findByTitle(String title);
-    List<ToDo> findAllByStatus(Boolean isCompleted);
 }
