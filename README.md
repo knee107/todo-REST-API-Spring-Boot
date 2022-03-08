@@ -4,12 +4,13 @@ Simple To-Do Rest API using Spring Boot Framework. This API allow to ADD, DELETE
 # README
 ## Instruction for running the app
 1. Clone repository.
-2. Open the project using your preferred IDE. (Ex. Intellij IDEA)
-3. Make sure you have a Mysql server running.
-4. Create a database with the following name: testdb, you can modify it in the application.properties file with this line: jdbc:mysql://localhost:3306/testdb?allowPublicKeyRetrieval=true&useSSL=false
-5. Modify the username and pawsord in the file mention above with this line: spring.datasource.username=testUsername spring.datasource.password=testpasword
-6. Run the application.
-7. Test the API using Rest Client (Ex. Postman) by using Port No : 8080 (http://localhost:8080/api)
+2. Make sure you have Docker and is running.
+3. To run this application, go to terminal, run command: docker-compose up
+4. Test the API using Rest Client (Ex. Postman) by using Port No : 8080 (http://localhost:8080/api)
+5. To stop the application, run command: docker-compose down
+
+## The compose docker image is also uploaded to docker hub
+1. Run command: docker pull knee1997/todo-rest-api-spring-boot_app:1.0.0
 
 ## Aplication Demo using Postman
 1. Add Item
